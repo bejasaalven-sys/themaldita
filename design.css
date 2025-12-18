@@ -1,0 +1,220 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    background-image: url('jov.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header {
+    background-color: #191a1d;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+nav {
+    background-color: #444;
+    color: white;
+    padding: 0.5em 0;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: transparent;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(58, 54, 54, 0.1);
+    border: 5px solid rgb(11, 11, 12);
+    border-style: dotted;
+}
+
+.deck-section {
+    margin-bottom: 20px;
+}
+
+.deck-header {
+    text-align: center;
+    padding: 10px;
+    background-color: gray;
+    color: white;
+}
+.big-deck-card {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    border: 5px solid #080808;
+    box-shadow: 0 2px 5px rgba(170, 186, 238, 0.1);
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+}
+.question-section {
+    flex: 1;
+    background-color: rgba(202, 93, 93, 0.8);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.question-section img {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 10px;
+}
+.input-section {
+    flex: 0 0 auto;
+    background-color: #fefefe;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.input-section label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.input-section input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.input-section button,
+.navigation button {
+    padding: 10px 20px;
+    background-color: #087532;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+.answer-section {
+    flex: 1;
+    background-color: #fefefe;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-container {
+    perspective: 1200px;
+    width: 100%;
+    max-width: 450px;
+    height: 320px;
+    position: relative;
+}
+
+.flipper {
+    transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform-style: preserve-3d;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.flip-container.flip .flipper {
+    transform: rotateY(180deg);
+}
+
+.front,
+.back {
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(238, 231, 231, 0.15);
+}
+.back {
+    transform: rotateY(180deg);
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    padding: 25px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.answer-display {
+    margin-bottom: 0;
+    text-align: center;
+    font-weight: 600;
+    color: #333;
+    font-size: 16px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.answer-image {
+    max-width: 95%;
+    max-height: 200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+.feedback-message {
+    font-weight: 700;
+    text-align: center;
+    font-size: 22px;
+    margin: 0;
+    padding: 8px 20px;
+    border-radius: 25px;
+    min-height: 45px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial Black', Arial, sans-serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    animation: slideInUp 0.5s ease-out 0.3s both;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.navigation {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.navigation button {
+    padding: 10px 20px;
+    margin: 0 10px;
+}
+.navigation button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

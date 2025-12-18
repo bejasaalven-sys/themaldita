@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz</title>
+    <link rel="stylesheet" href="design.css">
+</head>
+<body>
+    <header>
+        <h1>Alven's Interactive Quiz 2026</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Register</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="container">
+        <div class="deck-section">
+            <div class="deck-header">
+                <h2>Answer all you can</h2>
+            </div>
+            <div class="big-deck-card">
+                <div class="question-section">
+                    <img id="question-image" src="pic2.webp" alt="Question Icon">
+                    <h3 id="question-text">WHAT IS THE CAPITAL CITY OF THE PHILIPPINES?</h3>
+                </div>
+                <div class="input-section">
+                    <label for="user-answer">Your Answer:</label>
+                    <input type="text" id="user-answer" name="answer">
+                    <button onclick="showAnswer()">Show Answer</button>
+                </div>
+                <div class="answer-section" id="answer-section" style="display: none;">
+                    <div class="flip-container">
+                        <div class="flipper">
+                            <div class="front">
+                            </div>
+                            <div class="back">
+                                <div id="answer-display" class="answer-display"></div>
+                                <img id="answer-image" src="" alt="Answer Image" class="answer-image">
+                                <div id="feedback-message" class="feedback-message"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navigation">
+                <button id="play-btn" onclick="playQuiz()">Play</button>
+                <button id="next-btn" onclick="nextQuestion()">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Interactive Quiz</p>
+    </footer>
+
+    <script src="function.js"></script>
+</body>
+</html>
